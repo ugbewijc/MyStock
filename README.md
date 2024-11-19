@@ -1,54 +1,49 @@
-# Astro Starter Kit: Basics
+<div align="center">
+   <h3 align="center">MyStock</h3>
+      <p align="center">
+         <a href="#">View Demo</a> || 
+         <a href="https://github.com/ugbewijc/mystock/issues">Report Bug</a> || 
+         <a href="https://github.com/ugbewijc/mystock/issues">Request Feature</a>
+      </p>
+</div>
 
-```sh
-npm create astro@latest -- --template basics
-```
+## About The Project
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+The project is about creating a web product catalog for MSME (Micro, Small and Medium Enterprises) to showcase their product to their customers. The goal of this project is not to develop another ecommerce application, but to develop web product catalog, which will enable business owners, within the MSME space, can easily upload their products (including product details) and customers can easily view, search and place product orders directly to business owners social media handles/account (starting with Whatsapp)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Getting Started
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+You can download this project from this repo and set it up locally on you development environment. Get a local copy up and running by following these steps.
+   #### Prerequisites
+   You will need the folloing to run this program successfully
+   - [NodeJs](https://nodejs.org/en/download) v20.18 or higher
+   
+   #### Installation
+      
+      1. Clone the repo
+         ```sh
+            git clone https://github.com/ugbewijc/mystock.git
+         ```
+      
+      2. Change directory project directory
+      ```sh
+         cd mystock
+      ```
 
-## 🚀 Project Structure
+      3. Install NPM packages
+      ```sh
+         npm install
+      ```
+      
+      4. Start application
+      ```sh
+         npm run dev
+         or
+         npm start
+      ```
 
-Inside of your Astro project, you'll see the following folders and files:
+## Usage
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+This space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [John Chioma Ugbewi](https://github.com/ugbewijc)
