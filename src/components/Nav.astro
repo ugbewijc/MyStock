@@ -1,12 +1,12 @@
 ---
-
+const pathName = Astro.url.pathname.split('/')[1];
 ---
 <nav class="mx-20 py-4 flex flex-row justify-between items-end text-md">
     <ul><a href="/">Logo</a></ul>
     <ul class="flex flex-row uppercase items-end font-bold gap-6">
-        <li class="p-0.5 hover:border-b-4 hover:border-b-activeColor"><a href="">products</a></li>
-        <li class="p-0.5 hover:border-b-4 hover:border-b-activeColor"><a href="">brands</a></li>
-        <li class="p-0.5 hover:border-b-4 hover:border-b-activeColor"><a href="">contact us</a></li>
+        <li class:list=`py-1 px-2 hover:border-b-activeColor ${pathName === 'products' ? 'border-y-2 py-0 border-y-activeColor' : 'hover:border-b-2'}`><a href="/products">products</a></li>
+        <li class:list=`py-1 px-2 hover:border-b-activeColor ${pathName === 'brands' ? 'border-y-2 py-0 border-y-activeColor' : 'hover:border-b-2'}`><a href="/brands">brands</a></li>
+        <li class:list=`py-1 px-2 hover:border-b-activeColor ${pathName === 'contact' ? 'border-y-2 py-0 border-y-activeColor' : 'hover:border-b-2'}`><a href="/contact">contact us</a></li>
         <li class="relative">
             <button type="submit" class="absolute bottom-0.5 left-0.5 p-1 ">
                 <svg class="text-black-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -17,11 +17,11 @@
                     d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
                 </svg>
               </button>
-            <input class="pl-8 p-1 placeholder:text-gray-800 focus:outline-activeColor" type="search"  name="search" id="" placeholder="Search">
+            <input class="pl-8 p-1 placeholder:text-gray-400 font-medium focus:outline-activeColor" type="search"  name="search" id="" placeholder="Search">
             
         </li>
         <li class="w-12">
-            <a href="" class="relative">
+            <a href="/checkout" class="relative">
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
              width="30" height="37" viewBox="0 0 37.000000 39.000000"
              class=""
