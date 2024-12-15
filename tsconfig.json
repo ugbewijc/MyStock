@@ -1,0 +1,14 @@
+{
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    // "strict": true,
+    "types": ["astro/client"],
+    // "baseUrl": ".",
+    // "paths": {
+    //   "~/*": ["./src/*"]
+    // }
+  }
+}

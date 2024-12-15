@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import { actions } from 'astro:actions';
+---
+
+<form method="POST" action={actions.logout}>
+  <button>Log out</button>
+</form>
+<script>
+    import { actions } from 'astro:actions';
+</script>

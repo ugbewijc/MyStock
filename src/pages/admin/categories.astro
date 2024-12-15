@@ -1,0 +1,505 @@
+---
+import AdminLayout from "../../layouts/AdminLayout.astro";
+---
+
+<AdminLayout title="Categories">  
+    <main class="mx-20 pt-4 pb-12 gap-10 ">
+        <form
+            action=""
+            class="flex w-full border-2 border-gray-600 rounded-xl py-6 justify-center items-center gap-10"
+        >
+            <input
+                type="text"
+                name="category"
+                placeholder="New Category Name"
+                id=""
+                required
+                class="border-2 p-2 border-gray-400 w-1/3 focus:outline-none focus:border-activeColor"
+            />
+            <button
+                type="submit"
+                class="border-2 border-activeColor px-10 py-2 rounded-lg"
+                >Add Category</button
+            >
+        </form>
+        <section
+            class="flex flex-wrap justify-between rounded-lg *:flex gap-4 border-2 border-gray-500 my-10 py-10 px-4"
+        >
+            <!-- <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1</span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1 categories1</span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1</span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1 categories1</span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1</span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1</span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1</span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1 </span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1</span
+                >
+                <span
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </span>
+            </p>
+            <p class="justify-center items-center">
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1</span
+                >
+                <label
+                for="categories1"
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </label>
+            </p> -->
+            <div>
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories1</span
+                >
+                <label
+                    for="categories1"
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </label>
+
+                <!-- Modal Toggle (Checkbox) -->
+                <input type="checkbox" id="categories1" class="peer hidden" />
+
+                <!-- Modal -->
+                <div
+                    class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:block"
+                >
+                    <div class="fixed inset-0 flex items-center justify-center">
+                        <div
+                            class="flex flex-col gap-6 bg-white p-6 w-1/3"
+                        >
+                            <div class="flex justify-end">
+                                <label
+                                    for="categories1"
+                                    class="text-gray-400 text-4xl cursor-pointer"
+                                    >&times</label
+                                >
+                            </div>
+                                <form action=""
+                                class="gap-2 text-center text-lg">
+                                    <input type="text" name="category" id=""
+                                    class="border-2 border-gray-400 p-2 w-3/4">
+                                    <div class="flex justify-evenly my-6">
+                                        <input type="submit" value="Save"
+                                        class="bg-activeColor text-white px-6 py-2 rounded cursor-pointer">
+                                        <label
+                                        for="categories1"
+                                        class="bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
+                                    >
+                                        Discard
+                                    </label>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories2</span
+                >
+                <label
+                    for="categories2"
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </label>
+
+                <!-- Modal Toggle (Checkbox) -->
+                <input type="checkbox" id="categories2" class="peer hidden" />
+
+                <!-- Modal -->
+                <div
+                    class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:block"
+                >
+                    <div class="fixed inset-0 flex items-center justify-center">
+                        <div
+                            class="flex flex-col gap-6 bg-white p-6 w-1/3"
+                        >
+                            <div class="flex justify-end">
+                                <label
+                                    for="categories2"
+                                    class="text-gray-400 text-4xl cursor-pointer"
+                                    >&times</label
+                                >
+                            </div>
+                                <form action=""
+                                class="gap-2 text-center text-lg">
+                                    <input type="text" name="category" id=""
+                                    class="border-2 border-gray-400 p-2 w-3/4">
+                                    <div class="flex justify-evenly my-6">
+                                        <input type="submit" value="Save"
+                                        class="bg-activeColor text-white px-6 py-2 rounded cursor-pointer">
+                                        <label
+                                        for="categories2"
+                                        class="bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
+                                    >
+                                        Discard
+                                    </label>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories3</span
+                >
+                <label
+                    for="categories3"
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </label>
+
+                <!-- Modal Toggle (Checkbox) -->
+                <input type="checkbox" id="categories3" class="peer hidden" />
+
+                <!-- Modal -->
+                <div
+                    class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:block"
+                >
+                    <div class="fixed inset-0 flex items-center justify-center">
+                        <div
+                            class="flex flex-col gap-6 bg-white p-6 w-1/3"
+                        >
+                            <div class="flex justify-end">
+                                <label
+                                    for="categories3"
+                                    class="text-gray-400 text-4xl cursor-pointer"
+                                    >&times</label
+                                >
+                            </div>
+                                <form action=""
+                                class="gap-2 text-center text-lg">
+                                    <input type="text" name="category" id=""
+                                    class="border-2 border-gray-400 p-2 w-3/4">
+                                    <div class="flex justify-evenly my-6">
+                                        <input type="submit" value="Save"
+                                        class="bg-activeColor text-white px-6 py-2 rounded cursor-pointer">
+                                        <label
+                                        for="categories3"
+                                        class="bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
+                                    >
+                                        Discard
+                                    </label>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span
+                    class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+                    >categories4</span
+                >
+                <label
+                    for="categories4"
+                    class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+                >
+                    <svg
+                        width="28"
+                        height="10"
+                        viewBox="0 0 48 28"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                            fill="black"></path>
+                    </svg>
+                </label>
+
+                <!-- Modal Toggle (Checkbox) -->
+                <input type="checkbox" id="categories4" class="peer hidden" />
+
+                <!-- Modal -->
+                <div
+                    class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:block"
+                >
+                    <div class="fixed inset-0 flex items-center justify-center">
+                        <div
+                            class="flex flex-col gap-6 bg-white p-6 w-1/3"
+                        >
+                            <div class="flex justify-end">
+                                <label
+                                    for="categories4"
+                                    class="text-gray-400 text-4xl cursor-pointer"
+                                    >&times</label
+                                >
+                            </div>
+                                <form action=""
+                                class="gap-2 text-center text-lg">
+                                    <input type="text" name="category" id=""
+                                    class="border-2 border-gray-400 p-2 w-3/4">
+                                    <div class="flex justify-evenly my-6">
+                                        <input type="submit" value="Save"
+                                        class="bg-activeColor text-white px-6 py-2 rounded cursor-pointer">
+                                        <label
+                                        for="categories4"
+                                        class="bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
+                                    >
+                                        Discard
+                                    </label>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</AdminLayout>---

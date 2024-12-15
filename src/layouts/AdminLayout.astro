@@ -1,0 +1,31 @@
+---
+import "../assets/css/main.css";
+
+import Nav from "../components/admin/Nav.astro";
+import Footer from "../components/admin/Footer.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Product listing web application" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0" />
+		<meta name="author" content="John Chioma">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>MyStock | Admin - {title}</title>
+	</head>
+	<body class="flex w-full flex-col justify-center">
+		<Nav />
+		
+		<slot />
+        
+        <Footer />		
+	</body>
+</html>

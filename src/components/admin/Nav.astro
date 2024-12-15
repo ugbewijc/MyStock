@@ -1,0 +1,37 @@
+---
+const pathName = Astro.url.pathname.split("/")[2];
+---
+
+<nav class="flex flex-col mx-20 py-4 gap-10">
+    <div class="flex flex-row justify-between items-end text-md">
+        <ul><a href="/">Logo</a></ul>
+        <ul class="flex flex-row capitalize items-end font-medium gap-6">
+            <li
+                class="px-2 border-b-2 border-b-white hover:border-b-activeColor"
+            >
+                <a href="#">View Site</a>
+            </li>
+            <li
+                class="px-2 border-b-2 border-b-white hover:border-b-activeColor"
+            >
+                <a href="#">Publish Site</a>
+            </li>
+            <li
+                class="px-2 border-b-2 border-b-white hover:border-b-activeColor"
+            >
+                <a href="#">Build Site</a>
+            </li>
+            <li
+                class="px-2 border-b-2 border-b-white hover:border-b-activeColor"
+            >
+                <a href="./logout?_action=logout">Log Out</a>
+            </li>
+        </ul>
+    </div>
+    <div class="flex flex-row justify-between px-6 py-4 gap-6 border-2 border-gray-500">
+        <a href="./products" class=`font-bold px-12 rounded-xl py-2 border-2 
+        ${((pathName === 'products')  || (pathName === 'new-product')) ? 'border-activeColor' : 'hover:border-b-2 border-gray-600 hover:border-activeColor'}`>Products</a>
+        <a href="./categories" class=`font-bold px-12 rounded-xl py-2 border-2 ${pathName === 'categories' ? 'border-activeColor' : 'hover:border-b-2 border-gray-600 hover:border-activeColor'}`>Categories</a>
+        <a href="./brands" class=`font-bold px-12 rounded-xl py-2 border-2 ${pathName === 'brands' ? 'border-activeColor' : 'hover:border-b-2 border-gray-600 hover:border-activeColor'}`>Brands</a>
+    </div>
+</nav>

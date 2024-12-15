@@ -1,0 +1,95 @@
+---
+import { actions } from 'astro:actions';
+
+const result = Astro.getActionResult(actions.login);
+if(result && !result.error){
+    Astro.cookies.set('mystock', result.data, {
+        httpOnly: true,
+        secure: import.meta.env.PROD,
+        sameSite: 'strict',
+        // maxAge: 60 * 60 * 24,
+        path: '/',
+    });
+    return Astro.redirect('./products');
+}
+
+// if(Astro.request.method === "POST") {
+//     // export async function post({ request, cookies, redirect }) {
+
+
+//         // //create session
+//         const sessionData = JSON.stringify({
+//             name: res.data.username,
+//             expiresAt: Date.now() + 60 * 60 * 1000, // 1-hour expiration
+//         });
+//         // Set the session cookie
+//         Astro.cookies.set('mystock', sessionData, {
+//             httpOnly: true,       // Prevent JavaScript access
+//             // secure: true,         // Ensure it's only sent over HTTPS
+//             sameSite: 'strict',   // Mitigate CSRF
+//             maxAge: 60 * 60,      // 1 hour in seconds
+//             path: '/',            // Available across the entire site
+//         });
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="John Chioma" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>MyStock | Login</title>
+    </head>
+    <body class="flex h-screen flex-col justify-center items-center">
+        <main>
+            <p class="text-center py-4">
+<a href="/" class="text-xl font-bold">Home</a>
+            </p>
+            
+            {result?.error && (
+                <p class="my-4 py-2 rounded-lg border border-pink-600 text-center text-pink-600 text-sm">
+                    Please provide valid credentials.
+                  </p>
+              )}
+            <form
+                class="flex flex-col justify-center items-center gap-6"
+                name="login"
+                method="post"
+                action={actions.login}
+            >
+                <div class="flex border-2 border-gray-400 gap-2 rounded-lg items-center py-2 px-4 focus-within:border-activeColor">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M14.6667 15.5V13.8333C14.6667 12.9493 14.3155 12.1014 13.6903 11.4763C13.0652 10.8512 12.2174 10.5 11.3333 10.5H4.66666C3.78261 10.5 2.93476 10.8512 2.30964 11.4763C1.68452 12.1014 1.33333 12.9493 1.33333 13.8333V15.5" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.00001 7.16667C9.84095 7.16667 11.3333 5.67428 11.3333 3.83333C11.3333 1.99238 9.84095 0.5 8.00001 0.5C6.15906 0.5 4.66667 1.99238 4.66667 3.83333C4.66667 5.67428 6.15906 7.16667 8.00001 7.16667Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    <input
+                    class=" m-2 focus:outline-none"
+                        type="text"
+                        name="username"
+                        id="username"
+                        placeholder="Username"
+                        
+                    />
+                </div>
+                <div class="flex border-2 border-gray-400 gap-2 rounded-lg items-center py-2 px-4 focus-within:border-activeColor">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.8333 8.16667H2.16667C1.24619 8.16667 0.5 8.91286 0.5 9.83333V15.6667C0.5 16.5871 1.24619 17.3333 2.16667 17.3333H13.8333C14.7538 17.3333 15.5 16.5871 15.5 15.6667V9.83333C15.5 8.91286 14.7538 8.16667 13.8333 8.16667Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3.83333 8.16667V4.83333C3.83333 3.72827 4.27232 2.66846 5.05372 1.88706C5.83512 1.10565 6.89493 0.666668 7.99999 0.666668C9.10506 0.666668 10.1649 1.10565 10.9463 1.88706C11.7277 2.66846 12.1667 3.72827 12.1667 4.83333V8.16667" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input
+                        class=" m-2 peer focus:outline-none"
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Password"
+                            
+                        />
+                        
+                </div>
+                <button type="submit" class="w-full my-6 p-4 font-semibold text-xl border-2 border-activeColor rounded-xl">Login</button>
+            </form>
+        </main>
+    </body>
+</html>
+

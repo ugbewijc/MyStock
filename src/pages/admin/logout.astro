@@ -1,0 +1,14 @@
+---
+import { actions } from "astro:actions";
+
+if (Astro.cookies.has("mystock")) {
+    await Astro.callAction(actions.logout, null);
+    Astro.cookies.delete("mystock", {
+        httpOnly: true,
+        secure: import.meta.env.PROD,
+        sameSite: "strict",
+        path: "/",
+    });
+}
+return Astro.redirect("./login");
+---

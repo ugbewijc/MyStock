@@ -1,0 +1,57 @@
+---
+import { actions } from 'astro:actions';
+import AdminLayout from "../../layouts/AdminLayout.astro";
+import Brand from '../../components/admin/brand.astro';
+
+if(!('user' in Astro.locals)){
+    return Astro.redirect('/admin/login');
+}
+const brands = await Astro.callAction(actions.allBrands, null);
+// console.log(brands);
+const result = Astro.getActionResult(actions.addBrand);
+const updateResult = Astro.getActionResult(actions.updateBrand);
+// console.log(updateResult);
+// console.log("result",result);    
+---
+
+
+<AdminLayout title="Brand">
+    <main class="mx-20 pt-4 pb-12 gap-10">
+        <form
+        method="post"
+            action={actions.addBrand}
+            class="flex w-full border-2 border-gray-600 rounded-xl py-2.5 justify-center items-end gap-20"
+        >
+        <div class="w-1/3 flex flex-col">
+            {!result?.data && !result?.error && (
+            <p class="text-[0.6rem] pl-2 py-1.5 font-bold text-pink-500"> Required </p>    
+            )}
+            {result?.error && (
+                <p class="text-[0.6rem] border-t-2 border-t-pink-400 text-pink-600 pl-2 py-1 font-bold">Invalid Brand or Brand already exist</p>    
+                )}
+            {result?.data && (
+                <p class="text-[0.6rem] border-t-2 border-t-activeColor pl-2 py-1 font-bold">Saved</p>    
+                )}
+            <input
+                type="text"
+                name="brand"
+                placeholder="New Brand Name"
+                class=" w-full border-2 p-2 border-gray-400 focus:outline-none focus:border-activeColor"
+            />
+        </div>
+            <button
+                type="submit"
+                class="border-2 border-activeColor px-10 py-2 rounded-xl"
+                >Add Brand</button
+            >
+        </form>
+        <section
+            class="flex flex-wrap  rounded-lg *:flex gap-x-10 gap-y-6 border-2 border-gray-500 my-10 py-10 px-4"
+        >
+        {!brands?.data && <p class="w-full justify-center text-center">No Brands</p>}
+        {brands?.data && brands?.data.map((brand) => (
+            <Brand brand={brand} />
+        ))}
+        </section>
+    </main>
+</AdminLayout>---

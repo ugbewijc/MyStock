@@ -1,0 +1,65 @@
+---
+import { actions } from "astro:actions";
+
+const { brand } = Astro.props;
+// console.log(brand);
+---
+<div>
+    <span
+        class="h-[44px] capitalize border-2 border-gray-400 py-2 px-6"
+        >{brand?.name}</span
+    >
+    <label
+        for=`${brand?.name}`
+        class="h-[44px] border-2 border-gray-400 py-4 px-2 border-l-0 cursor-pointer"
+    >
+        <svg
+            width="28"
+            height="10"
+            viewBox="0 0 48 28"
+            fill="none"
+        >
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M26.9724 1.34795C29.8772 -0.449316 34.5867 -0.449316 37.4915 1.34795L42.8757 4.67927C45.7805 6.47654 45.7804 9.39047 42.8757 11.1877L20.862 24.8082H44.6289C45.9982 24.8082 47.1082 25.495 47.1082 26.3422C47.1082 27.1895 45.9982 27.8763 44.6289 27.8763H2.47938C1.11006 27.8763 0 27.1895 0 26.3422V18.6719C0 18.2651 0.26122 17.8749 0.726194 17.5872L26.9724 1.34795ZM13.8493 24.8082L39.3693 9.01825C40.3376 8.41916 40.3376 7.44785 39.3693 6.84876L33.9851 3.51744C33.0169 2.91835 31.447 2.91835 30.4788 3.51744L4.95876 19.3074V24.8082H13.8493Z"
+                fill="black"></path>
+        </svg>
+    </label>
+    <!-- Modal Toggle (Checkbox) -->
+    <input type="checkbox" id=`${brand?.name}` class="peer hidden" />
+    <!-- Modal -->
+    <div
+        class="fixed inset-0 bg-black bg-opacity-50 hidden peer-checked:block"
+    >
+        <div class="fixed inset-0 flex items-center justify-center">
+            <div
+                class="flex flex-col gap-6 bg-white p-6 w-1/3"
+            >
+                <div class="flex justify-end">
+                    <label
+                        for=`${brand?.name}`
+                        class="text-gray-400 text-4xl cursor-pointer"
+                        >&times</label
+                    >
+                </div>
+                    <form action={actions.updateBrand} method="POST"
+                    class="gap-2 text-center text-lg">
+                        <input type="text" name="brand" id="" value=`${brand?.name}`
+                        class="border-2 border-gray-400 p-2 w-3/4">
+                        <input class="hidden" type="text" name="old" value=`${brand?.name}` hidden>
+                        <div class="flex justify-evenly my-6">
+                            <input type="submit" value="Save"
+                            class="bg-activeColor text-white px-6 py-2 rounded cursor-pointer">
+                            <label
+                            for=`${brand?.name}`
+                            class="bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
+                        >
+                            Discard
+                        </label>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

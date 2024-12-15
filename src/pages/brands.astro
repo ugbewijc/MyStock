@@ -1,0 +1,55 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from "astro:assets";
+import laptop from "../assets/img/laptop.png";
+---
+
+<MainLayout title="Brands">
+    <main class="mx-20 mb-20">        
+			<section class="flex flex-wrap gap-6 mt-12 capitalize font-semibold">
+				<a class="hover:border-b-2 hover:border-b-activeColor" href="">all brands</a>
+				<a class="hover:border-b-2 hover:border-b-activeColor" href="">apples</a>
+				<a class="hover:border-b-2 hover:border-b-activeColor" href="">nokia</a>
+				<a class="hover:border-b-2 hover:border-b-activeColor" href="">samsung</a>
+				<a class="hover:border-b-2 hover:border-b-activeColor" href="">iTel</a>
+				<a class="hover:border-b-2 hover:border-b-activeColor" href="">oppo</a>
+				<a class="hover:border-b-2 hover:border-b-activeColor" href="">techno</a>
+            </section>
+            
+			<section class="flex flex-wrap gap-4 mt-12">
+				<div class="w-[23%] p-2 flex flex-col items-center gap-4 hover:border-2 hover:border-activeColor hover:rounded-[20px]">
+					<Image class="h-[250px]" src={laptop} alt="laptop by category" />
+					<button class="bg-activeColor py-2 rounded-lg w-full text-white">Add to cart</button>
+					<p class="capitalize font-semibold text-center">Nutrabey a a a a a Gold 100% Whey Protein Concentrate</p>
+				</div>
+				<div class="w-[23%] p-2 flex flex-col items-center gap-4 hover:border-2 hover:border-activeColor hover:rounded-[20px]">
+					<Image class="h-[250px]" src={laptop} alt="laptop by category" />
+					<button class="bg-activeColor py-2 rounded-lg w-full text-white">Add to cart</button>
+					<p class="capitalize font-semibold text-center">Nutrabey Gold 100% Whey Protein Concentrate</p>
+				</div>
+				<div class="w-[23%] p-2 flex flex-col items-center gap-4 hover:border-2 hover:border-activeColor hover:rounded-[20px]">
+					<Image class="h-[250px]" src={laptop} alt="laptop by category" />
+					<button class="bg-activeColor py-2 rounded-lg w-full text-white">Add to cart</button>
+					<p class="capitalize font-semibold text-center">Nutrabey Gold 100% Whey Protein Concentrate</p>
+				</div>
+				<div class="w-[23%] p-2 flex flex-col items-center gap-4 hover:border-2 hover:border-activeColor hover:rounded-[20px]">
+					<Image class="h-[250px]" src={laptop} alt="laptop by category" />
+					<button class="bg-activeColor py-2 rounded-lg w-full text-white">Add to cart</button>
+					<p class="capitalize font-semibold text-center">Nutrabey Gold 100% Whey Protein Concentrate</p>
+				</div>
+				<div class="w-[23%] p-2 flex flex-col items-center gap-4 hover:border-2 hover:border-activeColor hover:rounded-[20px]">
+					<Image class="h-[250px]" src={laptop} alt="laptop by category" />
+					<button class="bg-activeColor py-2 rounded-lg w-full text-white">Add to cart</button>
+					<p class="capitalize font-semibold text-center">Nutrabey Gold 100% Whey Protein Concentrate</p>
+				</div>
+				<div class="w-[23%] p-2 flex flex-col items-center gap-4 hover:border-2 hover:border-activeColor hover:rounded-[20px]">
+					<Image class="h-[250px]" src={laptop} alt="laptop by category" />
+					<button class="bg-activeColor py-2 rounded-lg w-full text-white">Add to cart</button>
+					<p class="capitalize font-semibold text-center">Nutrabey Gold 100% Whey Protein Concentrate</p>
+				</div>
+				
+			</section>
+
+    </main>
+    
+</MainLayout>
