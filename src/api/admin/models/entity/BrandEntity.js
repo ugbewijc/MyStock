@@ -28,3 +28,26 @@ export const Brand = new EntitySchema({
       },    
     }
   });
+
+  // export const BrandEntity = new EntitySchema<Brand>({
+  //   name: "Brand",
+  //   tableName: "brands",
+  //   columns: {
+  //     id: {
+  //       type: Number,
+  //       primary: true,
+  //       generated: "increment"
+  //     },
+  //     name: {
+  //       type: String,
+  //       nullable: false
+  //     }
+  //   },
+  //   relations: {
+  //     products: {
+  //       type: "one-to-many",
+  //       target: "Product",
+  //       inverseSide: "brand"
+  //     }
+  //   }
+  // })

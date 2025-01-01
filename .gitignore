@@ -1,5 +1,6 @@
 # user defined
 source.md
+db.sqlite
 
 # build output
 dist/
