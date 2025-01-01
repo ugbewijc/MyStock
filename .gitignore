@@ -1,6 +1,11 @@
 # user defined
 source.md
+/db.sqlite/
+src/uploads/
 db.sqlite
+*.sqlite
+*.db
+
 
 # build output
 dist/
