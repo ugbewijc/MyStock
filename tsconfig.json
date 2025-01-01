@@ -1,5 +1,5 @@
 {
-  "include": [".astro/types.d.ts", "**/*"],
+  // "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
     "module": "esnext",

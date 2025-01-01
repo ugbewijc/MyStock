@@ -1,5 +1,6 @@
 {
-  "name": "",
+  "name": "mystock",
+  "description": "Product listing web application for MSMEs",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "start": "astro dev",
     "typeorm": "typeorm-ts-node-esm"
   },
   "dependencies": {
